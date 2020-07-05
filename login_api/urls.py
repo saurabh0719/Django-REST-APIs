@@ -6,10 +6,12 @@ from . import views
 router = routers.DefaultRouter()
 router.register(r'students', views.students_list)
 '''
-
 urlpatterns = [ 
     path('students/', views.students_list),
-    path('students/<int:sid>', views.student_detail),
+    path('students/<int:sid>/', views.student_detail),
+    path('menu/', views.menu_list),
+    path('menu/items/<int:low>/<int:high>/', views.menu_item_list),
+    path('menu/item/<int:iid>/', views.menu_item),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
 
